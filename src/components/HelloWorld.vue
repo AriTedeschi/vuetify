@@ -1,59 +1,99 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      Seja bem-vindo(a)
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">Documentação do Vue.js</a>.
-    </p>
-    <h3>Plugins CLI Instalados</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router" target="_blank" rel="noopener">router</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-vuex" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Links úteis</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Comunidade & utilitários</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
-  </div>
+  <v-card>
+    <div class="Drawer float-left">
+      <v-navigation-drawer permanent float-left>
+        <v-list>
+          <v-list-item class="px-2">
+            <v-list-item-avatar>
+              <v-img
+                src="https://randomuser.me/api/portraits/men/74.jpg"
+              ></v-img>
+            </v-list-item-avatar>
+          </v-list-item>
+
+          <v-list-item link>
+            <v-list-item-content>
+              <v-list-item-title class="text-h6"> John Doe </v-list-item-title>
+              <v-list-item-subtitle>johm_doe@gmail.com</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+
+        <v-divider></v-divider>
+
+        <v-list nav dense>
+          <v-list-item link>
+            <v-list-item-icon>
+              <v-icon>mdi-folder</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Submitted Challenges</v-list-item-title>
+          </v-list-item>
+          <v-list-item link>
+            <v-list-item-icon>
+              <v-icon>mdi-account-multiple</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Mentors</v-list-item-title>
+          </v-list-item>
+          <v-list-item link>
+            <v-list-item-icon>
+              <v-icon>mdi-star</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Skills evaluation</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-navigation-drawer>
+    </div>
+    <div class="mx-auto;background-color:gray;">
+      <v-content width="100%">
+        <div style="margin-left: 5%; margin-right: 5%">
+          <h2>Sobre Hackathon:</h2>
+          <p>
+            Hackathons são eventos que envolvem pessoas interessadas em
+            solucionar problemas e desenvolver soluções inovadoras para questões
+            específicas. A origem do termo remete à combinação das palavras hack
+            (programar) e marathon (maratona).
+          </p>
+          <p>
+            Entretanto, há algum tempo que os Hackathons deixaram de ser eventos
+            focados apenas em programadores e começaram a ser espaço para
+            profissionais como designers, gestores, desenvolvedores,
+            especialistas em inovação e usuários.
+          </p>
+          <p>
+            Assim, essa maratona serve para que projetos e ideias sejam
+            discutidos e desenvolvidos. Levando em consideração opiniões,
+            recursos e conhecimentos de todos profissionais envolvidos.
+          </p>
+          <p>Confira o hacking atual do Hackathon abaixo:</p>
+        </div>
+        <div style="margin-left: 5%; margin-right: 5%">
+          <Table />
+        </div>
+      </v-content>
+    </div>
+
+    <Footer />
+  </v-card>
 </template>
 
-<script>
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
-}
-</script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
+<script>
+import Footer from "./Footer";
+import Table from "./Table";
+export default {
+  data() {
+    return {
+      items: [
+        { title: "Home", icon: "mdi-view-dashboard" },
+        { title: "About", icon: "mdi-forum" },
+      ],
+      links: ["Home", "Contacts", "Settings"],
+      mini: true,
+    };
+  },
+  components: {
+    Footer,
+    Table,
+  },
+};
+</script>

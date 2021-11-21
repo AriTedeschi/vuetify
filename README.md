@@ -1,5 +1,8 @@
 # Projeto Vue.js "aulacp109"
 
+Tela final do projeto:
+![](https://github.com/AriTedeschi/vuetify/blob/main/public/resultado.png)
+
 ## Para instalar o projeto rode:
 ```
 npm install

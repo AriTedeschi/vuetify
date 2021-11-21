@@ -1,35 +1,38 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Tela inicial</router-link> |
-      <router-link to="/about">Sobre</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-app-bar
+      app
+      color="dark"
+      dark
+    >
+      <div class="d-flex align-center">
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          contain
+          src="jsicon.png"
+          transition="scale-transition"
+          width="40"
+        />
+        <h2>Javascript Hackathon Ranking</h2>
+      </div>
+
+      <v-spacer></v-spacer>
+    </v-app-bar>
+
+    <v-main>
+      <router-view/>
+    </v-main>
+  </v-app>
 </template>
 
-<style>
-body{
-  background-color:#0d2f57;
-}
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: white;
-}
+<script>
 
-#nav {
-  padding: 30px;
-}
+export default {
+  name: 'App',
 
-#nav a {
-  font-weight: bold;
-  color: ##d6861e;
-}
-
-#nav a.router-link-exact-active {
-  color: #d6861e;
-}
-</style>
+  data: () => ({
+    //
+  }),
+};
+</script>
