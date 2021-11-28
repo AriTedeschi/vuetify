@@ -1,38 +1,38 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="dark"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="jsicon.png"
-          transition="scale-transition"
-          width="40"
-        />
-        <h2>Javascript Hackathon Ranking</h2>
-      </div>
-
-      <v-spacer></v-spacer>
-    </v-app-bar>
-
-    <v-main>
-      <router-view/>
-    </v-main>
+    <v-container fluid>
+      <v-row>
+        <Appbar />
+      </v-row>
+      <v-row>
+        <v-col md="2" sm="4">
+          <Drawer />
+        </v-col>
+        <v-col md="10" sm="8" class="overflow-y-auto">
+          <router-view />
+        </v-col>
+      </v-row>
+      <v-row>
+        <Footer />
+      </v-row>
+    </v-container>
   </v-app>
 </template>
 
 <script>
-
+import Appbar from "./components/Appbar.vue";
+import Footer from "./components/Footer.vue";
+import Drawer from "./components/Drawer";
 export default {
-  name: 'App',
+  name: "App",
 
   data: () => ({
     //
   }),
+  components: {
+    Appbar,
+    Footer,
+    Drawer
+  },
 };
 </script>

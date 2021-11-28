@@ -1,5 +1,6 @@
 <template>
   <v-footer
+    app
     dark
     padless
   >
@@ -7,7 +8,7 @@
       flat
       tile
       class="white--text text-center"
-      style="background-color:#bd9a03;width:100%;"
+      style="background-color:#bd9a03;width:100%;height:6%;"
     >
       <v-card-text>
         <v-btn
@@ -21,11 +22,6 @@
           </v-icon>
         </v-btn>
       </v-card-text>
-
-      <v-card-text class="white--text pt-0" >
-        
-      </v-card-text>
-
       <v-divider></v-divider>
 
       <v-card-text class="white--text">

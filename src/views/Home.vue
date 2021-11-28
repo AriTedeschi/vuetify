@@ -7,7 +7,9 @@
 
   export default {
     name: 'Home',
-
+    created () {
+      document.title = "Hackathon";
+    },
     components: {
       HelloWorld
     },

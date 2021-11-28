@@ -25,3 +25,7 @@ npm run lint
 
 ### Para modificar as configurações
 Veja [documentação](https://cli.vuejs.org/config/).
+
+Outras telas do projeto:
+![](https://github.com/AriTedeschi/vuetify/blob/main/public/resultado2.png?raw=true)
+![](https://github.com/AriTedeschi/vuetify/blob/main/public/resultado3.png?raw=true)
