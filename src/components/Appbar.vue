@@ -5,7 +5,7 @@
         alt="Vuetify Logo"
         class="shrink mr-2"
         contain
-        src="jsicon.png"
+        src="../../public/jsicon.png"
         transition="scale-transition"
         width="40"
       />
@@ -30,6 +30,11 @@
         style="color: #ffffff; text-decoration: none; margin-left: 6%"
         to="/skills"
         >Skills</router-link
+      >
+      <router-link
+        style="color: #ffffff; text-decoration: none; margin-left: 6%"
+        to="/locations"
+        >Locations</router-link
       >
       <router-link
         style="color: #ffffff; text-decoration: none; margin-left: 6%"

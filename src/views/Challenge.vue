@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="margin-bottom:10%;">
     <v-row>
       <v-col
         v-for="card in cards"

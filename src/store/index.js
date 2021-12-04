@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
 
 Vue.use(Vuex)
 
@@ -151,12 +152,46 @@ export default new Vuex.Store({
           {"name":"Haddop"}
         ]
       }
-    ]
+    ],
+    estados:[],
+    regions:[],
   },
   mutations: {
+    SET_ESTADOS(state,payload){
+      state.estados = payload
+    },
+    SET_REGIONS(state,payload){
+      state.regions = payload
+    },
   },
   actions: {
+    fetchStates(){
+      axios.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome')
+        .then(res=>{
+            const payload = res.data;
+            this.commit('SET_ESTADOS', payload)
+        })
+        .catch(err=>console.log(err))
+    },
+    fetchRegionsByStateId({ commit }, payload){
+      console.log(payload.stateId)
+      axios.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${payload.stateId}/regioes-intermediarias?orderBy=nome`)
+        .then(res=>{
+            const payload = res.data;
+            commit('SET_REGIONS', payload)
+        })
+        .catch(err=>console.log(err))
+    }
   },
   getters: {
+    getChallenges(state){
+      return state.challengesCards;
+    },
+    getEstados(state){
+      return state.estados;
+    },
+    getRegions(state){
+      return state.regions;
+    },
   }
 })

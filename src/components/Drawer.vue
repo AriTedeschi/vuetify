@@ -36,6 +36,12 @@
         </v-list-item-icon>
         <v-list-item-title>Skills evaluation</v-list-item-title>
       </v-list-item>
+      <v-list-item :to="{path: '/locations'}">
+        <v-list-item-icon>
+          <v-icon>mdi-map-clock</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title>Locations</v-list-item-title>
+      </v-list-item>
       <v-list-item :to="{path: '/profile'}">
         <v-list-item-icon>
           <v-icon>mdi-account-reactivate</v-icon>
