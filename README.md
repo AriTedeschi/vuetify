@@ -7,7 +7,7 @@ A partir da opção selecionada no componente, busca-se pela mesma API as regiõ
 
 ![](https://github.com/AriTedeschi/vuetify/blob/main/public/ex.png?raw=true)
 
-Para carregar as imagens na página `/challenges` utilizou-se imagens no formato `data:image/png;base64,`, acessando-as por código como neste ![exemplo](https://codepen.io/Ariaritedted/pen/ZEXbqqv).
+Para carregar as imagens na página `/challenges` utilizou-se imagens no formato `data:image/png;base64,`, acessando-as por código como neste [exemplo](https://codepen.io/Ariaritedted/pen/ZEXbqqv).
 
 
 ## Para instalar o projeto rode:
